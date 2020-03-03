@@ -4,4 +4,12 @@
     <string name="passwordText">Contraseña</string>
     <string name="loginButton">Ingresar</string>
     <string name="registerButton">Registrarse</string>
+
+
+    <string name="registerText">Registro de usuarios</string>
+    <string name="userRegisterText">Usuario</string>
+    <string name="emailRegisterText">Email</string>
+    <string name="passwordRegisterText">Contraseña</string>
+    <string name="BRegisterButton">Registrarse</string>
+    <string name="backRegisterButton">Atrás</string>
 </resources>
