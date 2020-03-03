@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Lab2Activities</string>
+    <string name="userText">Usuario</string>
+    <string name="passwordText">Contraseña</string>
+    <string name="loginButton">Ingresar</string>
+    <string name="registerButton">Registrarse</string>
 </resources>
