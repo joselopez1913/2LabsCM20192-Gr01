@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/regiterText" />
 
     <EditText
-        android:id="@+id/nameRegisterText3"
+        android:id="@+id/passwordRegisterText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -92,7 +92,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameRegisterText3" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterText" />
 
     <Button
         android:id="@+id/backRegisterButton"
