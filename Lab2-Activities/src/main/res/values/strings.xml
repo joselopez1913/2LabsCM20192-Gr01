@@ -12,4 +12,19 @@
     <string name="passwordRegisterText">Contraseña</string>
     <string name="BRegisterButton">Registrarse</string>
     <string name="backRegisterButton">Atrás</string>
+
+    <string name="textTitle2">Sitio</string>
+    <string name="textInfo">Información del lugar</string>
+    <string name="textPoint">Puntuación</string>
+
+    <string name="nameSite">Sitio</string>
+    <string name="descripSite">Información del lugar</string>
+    <string name="pointSite">Puntuación</string>
+    <string name="chooseButton">Elegir Imagen</string>
+    <string name="addButton">Agregar</string>
+    <string name="listButton">Ver Lista</string>
+
+
+
+
 </resources>
