@@ -17,7 +17,7 @@ public class RegisterU extends AppCompatActivity {
     Button btnGrabarUsu;
     EditText txtUser,txtEmail,txtPassword;
 
-    SQLite_OpenHelper helper=new SQLite_OpenHelper(this, "BD1", null,1);
+    SQLite_OpenHelper helper=new SQLite_OpenHelper(this, "User", null,1);
 
 
     @Override

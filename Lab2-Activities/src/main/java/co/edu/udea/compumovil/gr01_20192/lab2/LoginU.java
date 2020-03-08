@@ -17,7 +17,7 @@ public class LoginU extends AppCompatActivity {
 
     private Button buttonback;
     Button btnIngresar;
-    SQLite_OpenHelper helper= new SQLite_OpenHelper(this,"BD1",null,1);
+    SQLite_OpenHelper helper= new SQLite_OpenHelper(this,"User",null,1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
