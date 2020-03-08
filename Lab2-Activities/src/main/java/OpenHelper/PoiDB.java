@@ -11,29 +11,29 @@ public class PoiDB extends SQLite_OpenHelper {
         super(context, name, factory, version);
     }
 
-    public void queryData(String sql) {
-        SQLiteDatabase db=getWritableDatabase();
-        db.execSQL(sql);
+    public void queryData(String sql){
+        SQLiteDatabase database = getWritableDatabase();
+        database.execSQL(sql);
     }
 
-    public void InsertPOI(String name, String desc, String point, byte[] image) {
-        SQLiteDatabase db=getWritableDatabase();
-        String sql= "INSERT INTO POI VALUES (Null,?,?,?,?)";
+    public void insertPOI(String name, String desc, String point, byte[] image){
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "INSERT INTO POI VALUES (NULL, ?, ?, ?,?)";
 
-        SQLiteStatement statement=db.compileStatement(sql);
+        SQLiteStatement statement = database.compileStatement(sql);
         statement.clearBindings();
 
-        statement.bindString(1,name);
-        statement.bindString(2,desc);
-        statement.bindString(3,point);
-        statement.bindBlob(4,image);
+        statement.bindString(1, name);
+        statement.bindString(2, desc);
+        statement.bindString(3, point);
+        statement.bindBlob(4, image);
 
         statement.executeInsert();
     }
 
     public Cursor getData(String sql){
-        SQLiteDatabase db=getReadableDatabase();
-        return db.rawQuery(sql,null);
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery(sql, null);
     }
 
     @Override

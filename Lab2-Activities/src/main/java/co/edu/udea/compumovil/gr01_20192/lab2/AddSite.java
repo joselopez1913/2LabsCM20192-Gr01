@@ -28,60 +28,60 @@ import OpenHelper.SQLite_OpenHelper;
 
 public class AddSite extends AppCompatActivity {
 
-    EditText etname,etdesc,etpunt;
-    Button btnchoose, btnadd,btnlist;
+    EditText edtName, edtDesc,edtPoint;
+    Button btnChoose, btnAdd, btnList;
     ImageView imageView;
 
-    public static PoiDB sqliteHelper;
+    public static PoiDB sqLiteHelper;
 
-    final int REQUEST_CODE_GALLERY=999;
+    final int REQUEST_CODE_GALLERY = 999;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_site);
 
-
         init();
 
-        sqliteHelper=new PoiDB(this,"POIDB.sqlite",null,1);
+        sqLiteHelper = new PoiDB(this, "POIDB.sqlite", null, 1);
+        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS POI(Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, desc VARCHAR,point VARCHAR, image BLOB)");
 
-        sqliteHelper.queryData("CREATE TABLE IF NOT EXISTS POI (Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, desc VARCHAR, point VARCHAR, image BLOG)");
-
-        btnchoose.setOnClickListener(new View.OnClickListener(){
+        btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ActivityCompat.requestPermissions(AddSite.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUEST_CODE_GALLERY);
-                            }
-        });
-
-        btnadd.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                try{
-                    sqliteHelper.InsertPOI(
-                            etname.getText().toString().trim(),
-                            etdesc.getText().toString().trim(),
-                            etpunt.getText().toString().trim(),
-                            imageViewToByte(imageView)
-                    );
-                Toast.makeText(getApplicationContext(), "Imagen agregada", Toast.LENGTH_SHORT).show();
-               etname.setText("");
-               etdesc.setText("");
-               etpunt.setText("");
-               imageView.setImageResource(R.mipmap.ic_launcher);
-
-
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-
-
+            public void onClick(View view) {
+                ActivityCompat.requestPermissions(
+                        AddSite.this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        REQUEST_CODE_GALLERY
+                );
             }
         });
 
-        btnlist = findViewById(R.id.listButton);
-        btnlist.setOnClickListener(new View.OnClickListener() {
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    sqLiteHelper.insertPOI(
+                            edtName.getText().toString().trim(),
+                            edtDesc.getText().toString().trim(),
+                            edtPoint.getText().toString().trim(),
+                            imageViewToByte(imageView)
+                    );
+                    Toast.makeText(getApplicationContext(), "Imagen agregada", Toast.LENGTH_SHORT).show();
+                    edtName.setText("");
+                    edtDesc.setText("");
+                    edtPoint.setText("");
+                    imageView.setImageResource(R.mipmap.ic_launcher);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        btnList = findViewById(R.id.listButton);
+        btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 openActivityMenu();
@@ -90,24 +90,25 @@ public class AddSite extends AppCompatActivity {
 
     }
 
-    private byte[] imageViewToByte(ImageView image){
-        Bitmap bitmap=((BitmapDrawable)image.getDrawable()).getBitmap();
+    public static byte[] imageViewToByte(ImageView image) {
+        Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
-        byte[] byteArray=stream.toByteArray();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
         return byteArray;
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode==REQUEST_CODE_GALLERY){
-            if(grantResults.length >0 && grantResults[0]== PackageManager.PERMISSION_GRANTED){
-                Intent i = new Intent(Intent.ACTION_PICK);
-                i.setType("image/*");
-                startActivityForResult(i,REQUEST_CODE_GALLERY);
+
+        if(requestCode == REQUEST_CODE_GALLERY){
+            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, REQUEST_CODE_GALLERY);
             }
-            else{
-                Toast.makeText(getApplicationContext(), "No tienes permiso para elegir esta imagen",Toast.LENGTH_SHORT).show();
+            else {
+                Toast.makeText(getApplicationContext(), "No tienes permiso para acceder a galeria", Toast.LENGTH_SHORT).show();
             }
             return;
         }
@@ -116,32 +117,33 @@ public class AddSite extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if(requestCode==REQUEST_CODE_GALLERY && resultCode==RESULT_OK && data !=null){
-            Uri uri=data.getData();
+        if(requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
+            Uri uri = data.getData();
 
-            try{
-                InputStream is=getContentResolver().openInputStream(uri);
-                Bitmap bm= BitmapFactory.decodeStream(is);
-                imageView.setImageBitmap(bm);
-            }catch (FileNotFoundException e){
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(uri);
+
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                imageView.setImageBitmap(bitmap);
+
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void init(){
-        etname = (EditText)findViewById(R.id.nameSite);
-        etdesc = (EditText)findViewById(R.id.descripSite);
-        etpunt = (EditText)findViewById(R.id.pointSite);
-        btnchoose = (Button) findViewById(R.id.chooseButton);
-        btnadd = (Button) findViewById(R.id.addButton);
-        btnlist = (Button) findViewById(R.id.listButton);
+        edtName = (EditText)findViewById(R.id.nameSite);
+        edtDesc = (EditText)findViewById(R.id.descripSite);
+        edtPoint= (EditText)findViewById(R.id.pointSite);
+        btnChoose = (Button) findViewById(R.id.chooseButton);
+        btnAdd = (Button) findViewById(R.id.addButton);
+        btnList = (Button) findViewById(R.id.listButton);
         imageView=(ImageView) findViewById(R.id.imageView3);
-
-
     }
 
     public void openActivityMenu(){

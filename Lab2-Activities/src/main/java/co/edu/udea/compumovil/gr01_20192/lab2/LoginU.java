@@ -15,7 +15,7 @@ import OpenHelper.SQLite_OpenHelper;
 
 public class LoginU extends AppCompatActivity {
 
-    private Button buttonback;
+    private Button buttonback,buttons;
     Button btnIngresar;
     SQLite_OpenHelper helper= new SQLite_OpenHelper(this,"User",null,1);
 
@@ -35,6 +35,7 @@ public class LoginU extends AppCompatActivity {
         });
         //1.
 
+
         //2.Validar login
         btnIngresar=(Button)findViewById(R.id.loginButton);
         btnIngresar.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +47,7 @@ public class LoginU extends AppCompatActivity {
                 try {
                     Cursor cursor = helper.ConsultUSer(txtuser.getText().toString(), txtpass.getText().toString());
                     if (cursor.getCount()>0){
-                        Intent i2 = new Intent(getApplicationContext(), MenuU.class);
+                        Intent i2 = new Intent(getApplicationContext(), AddSite.class);
                         startActivity(i2);
                     }else{
                         Toast.makeText(getApplicationContext(),"Usuario o Contraseña Incorrectos"
@@ -73,4 +74,6 @@ public class LoginU extends AppCompatActivity {
         startActivity(intent);
     }
     //1.2
+
+
 }
