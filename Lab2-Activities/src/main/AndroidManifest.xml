@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".AddSite"></activity>
-        <activity android:name=".MenuU" />
+        <activity android:name=".MenuU"
+            android:label="POI List"
+            android:parentActivityName=".AddSite"/>
         <activity android:name=".RegisterU" />
         <activity android:name=".LoginU">
             <intent-filter>
@@ -21,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

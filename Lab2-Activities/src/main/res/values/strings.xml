@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lab2Activities</string>
+    <string name="app_name">Medallo</string>
     <string name="userText">Usuario</string>
     <string name="passwordText">Contraseña</string>
     <string name="loginButton">Ingresar</string>
@@ -19,10 +19,10 @@
 
     <string name="nameSite">Sitio</string>
     <string name="descripSite">Información del lugar</string>
-    <string name="pointSite">Puntuación</string>
+    <string name="pointSite">Puntuación (1 - 5)</string>
     <string name="chooseButton">Elegir Imagen</string>
     <string name="addButton">Agregar</string>
-    <string name="listButton">Ver Lista</string>
+    <string name="listButton">Ver Sitios</string>
 
 
 
