@@ -6,16 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".MenuU">
 
-
     <GridView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gridView"
+        android:id="@+id/gridView2"
+        android:layout_width="match_parent"
+        android:layout_height="316dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:columnWidth="120dp"
         android:gravity="center"
-        android:numColumns="auto_fit" />
+        android:layout_below="@+id/textView3"
+        android:numColumns="3"
+        android:layout_alignLeft="@+id/textView3"/>
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="334dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:columnWidth="120dp"
+        android:gravity="center"
+        android:numColumns="3"
+        android:layout_below="@+id/gridView2"
+        android:layout_alignLeft="@+id/gridView2"
+
+        />
 
     <Button
         android:id="@+id/buttonNew"
@@ -32,6 +48,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </RelativeLayout>
