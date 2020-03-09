@@ -6,18 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MenuU">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
     <GridView
         android:id="@+id/gridView2"
         android:layout_width="match_parent"
         android:layout_height="316dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:columnWidth="120dp"
         android:gravity="center"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/toolbar"
         android:numColumns="3"
-        android:layout_alignLeft="@+id/textView3"/>
+        android:layout_alignLeft="@+id/toolbar"/>
 
     <GridView
         android:id="@+id/gridView"
@@ -33,6 +42,8 @@
 
         />
 
+
+
     <Button
         android:id="@+id/buttonNew"
         android:layout_width="wrap_content"
@@ -44,6 +55,25 @@
         android:text="+"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00D8382A"
+        android:text="Settings"
+        android:textSize="18sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.edu.udea.compumovil.gr01_20192.lab2">
-    
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,10 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".AddSite"></activity>
-        <activity android:name=".MenuU"
+        <activity android:name=".SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".MenuU">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuU">
+            </meta-data>
+        </activity>
+        <activity android:name=".AddSite" />
+        <activity
+            android:name=".MenuU"
             android:label="POI List"
-            android:parentActivityName=".AddSite"/>
+            android:parentActivityName=".AddSite" />
         <activity android:name=".RegisterU" />
         <activity android:name=".LoginU">
             <intent-filter>
@@ -23,7 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -12,12 +14,11 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import OpenHelper.PoiDB;
 
@@ -32,7 +33,7 @@ public class MenuU extends AppCompatActivity {
     int[] sitesImages = {R.drawable.atanasio,R.drawable.arvi,R.drawable.elcastillo};//,R.drawable.explora,R.drawable.pueblitopaisa,R.drawable.zoologico};
     //1gridview
 
-    private Button buttonnew;
+    private Button buttonnew,buttons;
 
     GridView gridView;
     ArrayList<POI> list;
@@ -91,12 +92,29 @@ public class MenuU extends AppCompatActivity {
                 openActivityAddSite();
             }
         });
+
+        buttons = findViewById(R.id.buttonSettings);
+        buttons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                openActivitysettings();
+            }
+        });
+    }
+
+    private void setSupportActionBar(Toolbar toolbar) {
     }
 
     public void openActivityAddSite(){
         Intent intent = new Intent(this, AddSite.class);
         startActivity(intent);
     }
+
+    public void openActivitysettings(){
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
 
 
     private class CustomAdapter extends BaseAdapter {
@@ -132,10 +150,8 @@ public class MenuU extends AppCompatActivity {
 
 
             return view1;
-
-
-
         }
     }
+
     }
 
