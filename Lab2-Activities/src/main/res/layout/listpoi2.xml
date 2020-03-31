@@ -16,7 +16,7 @@
         android:src="@drawable/atanasio"/>
 
     <TextView
-        android:id="@+id/txtName2"
+        android:id="@+id/txt11"
         android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:text="Sitio"
@@ -34,13 +34,13 @@
         android:text="Descripción:"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_below="@+id/txtName2"
-        android:layout_alignLeft="@+id/txtName2"
+        android:layout_below="@+id/txt11"
+        android:layout_alignLeft="@+id/txt11"
         android:gravity="center"/>
 
 
     <TextView
-        android:id="@+id/txtDesc2"
+        android:id="@+id/txt22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Descripción"
@@ -57,12 +57,12 @@
         android:text="Puntuación"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_below="@+id/txtDesc2"
-        android:layout_alignLeft="@+id/txtDesc2"
+        android:layout_below="@+id/txt22"
+        android:layout_alignLeft="@+id/txt22"
         android:gravity="center"/>
 
     <TextView
-        android:id="@+id/txtPoint2"
+        android:id="@+id/txt33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Puntuacion"
