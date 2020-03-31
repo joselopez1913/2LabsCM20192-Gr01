@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20192.lab2;
+package co.edu.udea.compumovil.gr01_20192.lab2.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
-import OpenHelper.SQLite_OpenHelper;
+import co.edu.udea.compumovil.gr01_20192.lab2.DataBase.UserDB;
+import co.edu.udea.compumovil.gr01_20192.lab2.Entities.User;
+import co.edu.udea.compumovil.gr01_20192.lab2.R;
 
 public class RegisterU extends AppCompatActivity {
 
@@ -17,8 +20,7 @@ public class RegisterU extends AppCompatActivity {
     Button btnGrabarUsu;
     EditText txtUser,txtEmail,txtPassword;
 
-    SQLite_OpenHelper helper=new SQLite_OpenHelper(this, "User", null,1);
-
+    private UserDB UDB ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +44,14 @@ public class RegisterU extends AppCompatActivity {
         txtEmail=(EditText)findViewById(R.id.emailRegisterText);
         txtPassword=(EditText)findViewById(R.id.passwordRegisterText);
 
+        UDB= UserDB.getAppDatabase(getApplicationContext());
+
         btnGrabarUsu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                helper.Open();
-                helper.InsertReg(String.valueOf(txtUser.getText()),
-                        String.valueOf(txtEmail.getText()),
-                        String.valueOf(txtPassword.getText()));
-                helper.Close();
+                //Insertar a la BD
+
+                UDB.userDao().insertAll(new User(txtUser.getText().toString(),txtEmail.getText().toString(),txtPassword.getText().toString()));
 
                 Toast.makeText(getApplicationContext(), "Usuario Registrado"
                 ,Toast.LENGTH_LONG).show();
@@ -62,13 +64,12 @@ public class RegisterU extends AppCompatActivity {
 
     }
 
+
     //1.2
     public void openActivityLogin(){
         Intent intent = new Intent(this, LoginU.class);
         startActivity(intent);
     }
     //1.2
-
-    //2.
 }
 

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/build/generated/ap_generated_sources/debug/out/co/edu/udea/compumovil/gr01_20192/lab2/DAO/UserDao_Impl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/DAO/PoiDB.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/DAO/SQLite_OpenHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/DAO/UserDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/Entities/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/OpenHelper/PoiDB.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/DAO/PoiDB.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/DAO/PoiDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/DAO/SQLite_OpenHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/DAO/UserDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/DataBase/PoiDB.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/DataBase/UserDB.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/Entities/POI.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/Entities/Poi.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/Entities/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/LoginU.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/Menu2Activity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/MenuU.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/RegisterU.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/UI/AddSite.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/UI/LoginU.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/UI/MenuU.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/UI/RegisterU.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/UI/ViewPOI.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/activity_menu2.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/activity_menu_u.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/activity_menu_u2.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/activity_menuu.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/activity_menuubad.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/content_menu2.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/content_menuu.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/listpoi.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/Carrera/Semestre 19-2/Comp Movil/Lab2/compas/lab2activities/build (2).gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20192.lab2;
+package co.edu.udea.compumovil.gr01_20192.lab2.UI;
 
 public class POI {
     private int id;

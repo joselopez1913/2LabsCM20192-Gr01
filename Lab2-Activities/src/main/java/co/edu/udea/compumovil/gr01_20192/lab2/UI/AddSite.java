@@ -1,9 +1,9 @@
-package co.edu.udea.compumovil.gr01_20192.lab2;
+package co.edu.udea.compumovil.gr01_20192.lab2.UI;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.room.Room;
 
 import android.Manifest;
 import android.content.Intent;
@@ -23,8 +23,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import OpenHelper.PoiDB;
-import OpenHelper.SQLite_OpenHelper;
+import co.edu.udea.compumovil.gr01_20192.lab2.DataBase.PoiDB;
+import co.edu.udea.compumovil.gr01_20192.lab2.DataBase.UserDB;
+import co.edu.udea.compumovil.gr01_20192.lab2.Entities.Poi;
+import co.edu.udea.compumovil.gr01_20192.lab2.R;
 
 public class AddSite extends AppCompatActivity {
 
@@ -32,7 +34,7 @@ public class AddSite extends AppCompatActivity {
     Button btnChoose, btnAdd, btnList;
     ImageView imageView;
 
-    public static PoiDB sqLiteHelper;
+    private PoiDB PDB ;
 
     final int REQUEST_CODE_GALLERY = 999;
 
@@ -42,10 +44,15 @@ public class AddSite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_site);
 
-        init();
+        edtName = (EditText)findViewById(R.id.nameSite);
+        edtDesc = (EditText)findViewById(R.id.descripSite);
+        edtPoint= (EditText)findViewById(R.id.pointSite);
+        btnChoose = (Button) findViewById(R.id.chooseButton);
+        btnAdd = (Button) findViewById(R.id.addButton);
+        btnList = (Button) findViewById(R.id.listButton);
+        imageView=(ImageView) findViewById(R.id.imageView3);
 
-        sqLiteHelper = new PoiDB(this, "POIDB.sqlite", null, 1);
-        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS POI(Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, desc VARCHAR,point VARCHAR, image BLOB)");
+        PDB= PoiDB.getAppDatabase(getApplicationContext());
 
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,12 +69,9 @@ public class AddSite extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    sqLiteHelper.insertPOI(
-                            edtName.getText().toString().trim(),
-                            edtDesc.getText().toString().trim(),
-                            edtPoint.getText().toString().trim(),
-                            imageViewToByte(imageView)
-                    );
+                    //insertar a la DB
+                    PDB.poiDao().insert(new Poi(edtName.getText().toString().trim(),edtDesc.getText().toString().trim(),edtPoint.getText().toString().trim(),imageViewToByte(imageView)));
+
                     Toast.makeText(getApplicationContext(), "Imagen agregada", Toast.LENGTH_SHORT).show();
                     edtName.setText("");
                     edtDesc.setText("");
@@ -136,15 +140,6 @@ public class AddSite extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void init(){
-        edtName = (EditText)findViewById(R.id.nameSite);
-        edtDesc = (EditText)findViewById(R.id.descripSite);
-        edtPoint= (EditText)findViewById(R.id.pointSite);
-        btnChoose = (Button) findViewById(R.id.chooseButton);
-        btnAdd = (Button) findViewById(R.id.addButton);
-        btnList = (Button) findViewById(R.id.listButton);
-        imageView=(ImageView) findViewById(R.id.imageView3);
-    }
 
     public void openActivityMenu(){
         Intent intent = new Intent(this, MenuU.class);

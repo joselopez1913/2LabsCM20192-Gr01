@@ -1,0 +1,5 @@
+sonar.projectKey=Grupo11
+sonar.projectName=App
+sonar.projectVersion=1.0
+sonar.sources=src
+sonar.java.binaries=build
