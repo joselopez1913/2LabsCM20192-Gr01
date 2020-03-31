@@ -28,7 +28,7 @@
         />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Descripción:"
@@ -45,13 +45,13 @@
         android:layout_height="wrap_content"
         android:text="Descripción"
         android:textSize="18sp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textDesc"
+        android:layout_alignLeft="@+id/textDesc"
         android:gravity="center"/>
 
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textPoint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Puntuación"
@@ -68,8 +68,8 @@
         android:text="Puntuacion"
         android:textColor="#1A34C7"
         android:textSize="20sp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textPoint"
+        android:layout_alignLeft="@+id/textPoint"
         android:gravity="center"/>
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20192.lab2;
+package co.edu.udea.compumovil.gr01_20192.lab2.UI;
 
 
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import co.edu.udea.compumovil.gr01_20192.lab2.R;
 
 /**
  * A simple {@link Fragment} subclass.

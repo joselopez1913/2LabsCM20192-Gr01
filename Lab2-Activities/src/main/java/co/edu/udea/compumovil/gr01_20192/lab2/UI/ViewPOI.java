@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20192.lab2;
+package co.edu.udea.compumovil.gr01_20192.lab2.UI;
 
 import android.content.Context;
 import android.net.Uri;
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import co.edu.udea.compumovil.gr01_20192.lab2.R;
 
 
 /**

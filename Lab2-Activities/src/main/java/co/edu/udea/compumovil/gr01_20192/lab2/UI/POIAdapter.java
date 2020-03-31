@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr01_20192.lab2;
+package co.edu.udea.compumovil.gr01_20192.lab2.UI;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 
 import java.util.ArrayList;
+
+import co.edu.udea.compumovil.gr01_20192.lab2.R;
 
 public class POIAdapter extends BaseAdapter {
 

@@ -11,21 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".SettingsActivity"
+        <activity
+            android:name=".UI.SettingsActivity"
             android:label="Settings"
-            android:parentActivityName=".MenuU">
+            android:parentActivityName=".UI.MenuU">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuU">
-            </meta-data>
+                android:value=".UI.MenuU"></meta-data>
         </activity>
-        <activity android:name=".AddSite" />
+        <activity android:name=".UI.AddSite" />
         <activity
-            android:name=".MenuU"
+            android:name=".UI.MenuU"
             android:label="POI List"
-            android:parentActivityName=".AddSite" />
-        <activity android:name=".RegisterU" />
-        <activity android:name=".LoginU">
+            android:parentActivityName=".UI.AddSite" />
+        <activity android:name=".UI.RegisterU" />
+        <activity android:name=".UI.LoginU">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
