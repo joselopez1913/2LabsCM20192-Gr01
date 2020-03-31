@@ -2,6 +2,7 @@ package co.edu.udea.compumovil.gr01_20192.lab2.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,6 +26,8 @@ import co.edu.udea.compumovil.gr01_20192.lab2.DataBase.PoiDB;
 import co.edu.udea.compumovil.gr01_20192.lab2.Entities.Poi;
 import co.edu.udea.compumovil.gr01_20192.lab2.R;
 
+import static co.edu.udea.compumovil.gr01_20192.lab2.UI.AddSite.imageViewToByte;
+
 public class MenuU extends AppCompatActivity {
 
     private Button buttonnew,buttons;
@@ -41,6 +44,7 @@ public class MenuU extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuu);
+
 
         //add POI of the DB to Listview
         PDB = PoiDB.getAppDatabase(getApplicationContext());
@@ -142,6 +146,7 @@ public class MenuU extends AppCompatActivity {
         }
 
     }
+
 
     }
 

@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.room.Room;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -22,9 +23,9 @@ import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.nio.ByteBuffer;
 
 import co.edu.udea.compumovil.gr01_20192.lab2.DataBase.PoiDB;
-import co.edu.udea.compumovil.gr01_20192.lab2.DataBase.UserDB;
 import co.edu.udea.compumovil.gr01_20192.lab2.Entities.Poi;
 import co.edu.udea.compumovil.gr01_20192.lab2.R;
 
@@ -44,6 +45,8 @@ public class AddSite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_site);
 
+        PDB= PoiDB.getAppDatabase(getApplicationContext());
+
         edtName = (EditText)findViewById(R.id.nameSite);
         edtDesc = (EditText)findViewById(R.id.descripSite);
         edtPoint= (EditText)findViewById(R.id.pointSite);
@@ -52,7 +55,7 @@ public class AddSite extends AppCompatActivity {
         btnList = (Button) findViewById(R.id.listButton);
         imageView=(ImageView) findViewById(R.id.imageView3);
 
-        PDB= PoiDB.getAppDatabase(getApplicationContext());
+
 
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,5 +148,7 @@ public class AddSite extends AppCompatActivity {
         Intent intent = new Intent(this, MenuU.class);
         startActivity(intent);
     }
+
+
 
 }
