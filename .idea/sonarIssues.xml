@@ -138,6 +138,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/UI/SiteDetail.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/java/co/edu/udea/compumovil/gr01_20192/lab2/UI/ViewPOI.java">
           <value>
             <set />
@@ -174,6 +179,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/content_menuu.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Lab2-Activities/src/main/res/layout/fragment_view_poi.xml">
           <value>
             <set />
           </value>

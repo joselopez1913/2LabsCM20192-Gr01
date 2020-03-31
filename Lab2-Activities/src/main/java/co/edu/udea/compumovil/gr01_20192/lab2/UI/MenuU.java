@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,12 +18,7 @@ import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.udea.compumovil.gr01_20192.lab2.DataBase.PoiDB;
@@ -37,10 +30,11 @@ public class MenuU extends AppCompatActivity {
     private Button buttonnew,buttons;
 
     ListView lvPoi;
-    private List<Poi> listpoi;
+    private List<Poi> listpoi,lp;
 
-    private PoiDB PDB ;
+    private PoiDB PDB,P2DB ;
 
+    ListView listView;
 
 
     @Override
@@ -48,14 +42,24 @@ public class MenuU extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuu);
 
-        //2. LitView
-
+        //add POI of the DB to Listview
         PDB = PoiDB.getAppDatabase(getApplicationContext());
         listpoi = PDB.poiDao().getAll();
         lvPoi = (ListView) findViewById(R.id.LvPoi);
 
         AdapterPoi ap = new AdapterPoi(this);
         lvPoi.setAdapter(ap);
+        //
+
+
+        //2. LitView
+
+        PDB = PoiDB.getAppDatabase(getApplicationContext());
+        listpoi = PDB.poiDao().getAll();
+        lvPoi = (ListView) findViewById(R.id.LvPoi);
+
+        AdapterPoi adapterPoi = new AdapterPoi(this);
+        lvPoi.setAdapter(adapterPoi);
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -65,6 +69,35 @@ public class MenuU extends AppCompatActivity {
                 openActivityAddSite();
             }
         });
+
+        //fragment with details of the sites
+
+        P2DB=PoiDB.getAppDatabase(getApplicationContext());
+        lp = P2DB.poiDao().getAll();
+        listView=(ListView)findViewById(R.id.LvPoi);
+        AdapterPoi aa = new AdapterPoi(this);
+        listView.setAdapter(aa);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(),SiteDetail.class);
+
+             //   intent.putExtra("imagenes",lp.get(position).getImage());
+                intent.putExtra("site",lp.get(position).getNamep());
+                intent.putExtra("desc",lp.get(position).getDescription());
+                intent.putExtra("point",lp.get(position).getPoint());
+
+                startActivity(intent);
+            }
+        });
+
+
+        //
+
+
+
+
     }
 
     private void setSupportActionBar(Toolbar myToolbar) {
@@ -77,7 +110,7 @@ public class MenuU extends AppCompatActivity {
     }
 
     public void openActivitysettings(){
-        Intent intent = new Intent(this, SettingsActivity.class);
+        Intent intent = new Intent(this, SiteDetail.class);
         startActivity(intent);
     }
 

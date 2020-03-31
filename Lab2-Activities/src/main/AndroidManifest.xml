@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".UI.SettingsActivity"
+            android:name=".UI.SiteDetail"
             android:label="Settings"
             android:parentActivityName=".UI.MenuU">
             <meta-data

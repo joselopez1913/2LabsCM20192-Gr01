@@ -22,9 +22,9 @@ public class GridItem extends AppCompatActivity {
         setContentView(R.layout.fragment_view_poi);
 
         imageView = findViewById(R.id.imagePOI2);
-        gridData1 = findViewById(R.id.txtName2);
-        gridData2 = findViewById(R.id.txtDesc2);
-        gridData3 = findViewById(R.id.txtPoint2);
+        gridData1 = findViewById(R.id.txt11);
+        gridData2 = findViewById(R.id.txt22);
+        gridData3 = findViewById(R.id.txt33);
 
         Intent intent = getIntent();
         int receivedImage = intent.getIntExtra("image2",0);
